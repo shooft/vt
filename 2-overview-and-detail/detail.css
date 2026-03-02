@@ -1,0 +1,122 @@
+/* VIEW TRANSITION STUFF */
+
+@media (prefers-reduced-motion: no-preference) {
+	@view-transition {
+		navigation: auto;
+	}
+}
+
+
+
+/* DE HELE PAGINA */
+
+::view-transition-group(root) {
+	animation-duration:.5s;
+}
+
+
+/* ALLEEN DE WOLF */
+
+/* h1 {
+  view-transition-name: title-wolf;
+}
+
+img {
+  view-transition-name: image-wolf;
+}
+
+::view-transition-group(.title-wolf) {
+	animation-duration: .5s;
+}
+
+::view-transition-group(.image-wolf) {
+	animation-duration: .5s;
+} */
+
+
+
+/* WOLF EN BIG */
+
+h1 {
+  view-transition-name:var(--vt);
+  view-transition-class:title;
+}
+
+img {
+  view-transition-name:var(--vt);
+  view-transition-class:image;
+}
+
+::view-transition-group(.title) {
+	animation-duration: .5s;
+}
+
+::view-transition-group(.image) {
+	animation-duration: .5s;
+}
+
+
+
+
+
+
+
+
+
+/* BASIS */
+
+@layer basis {
+  * {
+    box-sizing:border-box;
+  }
+
+  body {
+    min-height:100dvh;
+    margin:0;
+    padding:2em;
+    background-image:linear-gradient(45deg in hsl,lightblue,pink);
+    background-attachment:fixed;
+
+    display:grid;
+    place-content:center;
+    place-items:center;
+    gap:1em;
+
+    font-family: "Saira", sans-serif;
+  }
+
+  h1 {
+    margin:0;
+    font-family: "Mystery Quest", system-ui;
+    font-size:clamp(2rem, 0.5rem + 7.5vw, 5rem);
+    text-align:center;
+  }
+
+  img {
+    width:min(20em, 80vw);
+    padding:4em 2em;
+
+    background-color:#fff6;
+    border-radius:30%;
+    
+    @supports (corner-shape:squircle) {
+      border-radius:50%;
+      corner-shape:squircle;
+    }
+  }
+
+  blockquote {
+    font-size:clamp(1.25rem, 0.875rem + 1.875vw, 2rem);
+    text-align:center;
+  }
+
+  nav {
+    position:fixed;
+    left:1em;
+    top:1em;
+  }
+
+  a {
+    font-size:1.25em;
+  }
+}

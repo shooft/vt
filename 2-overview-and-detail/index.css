@@ -1,0 +1,122 @@
+/* VIEW TRANSITION STUFF */
+
+@media (prefers-reduced-motion: no-preference) {
+	@view-transition {
+		navigation: auto;
+	}
+}
+
+
+
+/* DE HELE PAGINA */
+
+::view-transition-group(root) {
+	animation-duration:.5s;
+}
+
+
+
+/* ALLEEN DE WOLF */
+
+/* li:first-child h2 {
+  view-transition-name: title-wolf;
+}
+
+li:first-child img {
+  view-transition-name: image-wolf;
+}
+
+::view-transition-group(.title-wolf) {
+	animation-duration: .5s;
+}
+
+::view-transition-group(.image-wolf) {
+	animation-duration: .5s;
+} */
+
+
+
+/* WOLF EN BIG */
+
+h2 {
+  view-transition-name:var(--vt);
+  view-transition-class:title;
+}
+
+img {
+  view-transition-name:var(--vt);
+  view-transition-class:image;
+}
+
+::view-transition-group(.title) {
+	animation-duration: .5s;
+}
+
+::view-transition-group(.image) {
+	animation-duration: .5s;
+}
+
+
+
+
+
+
+
+
+/* BASIS */
+
+@layer basis {
+  * {
+    box-sizing:border-box;
+  }
+
+  body {
+    margin:0;
+    padding:2em;
+    background-image:linear-gradient(45deg in hsl,lightblue,pink);
+    background-attachment:fixed;
+
+    font-family: "Saira", sans-serif;
+  }
+
+  h1 {
+    font-family: "Mystery Quest", system-ui;
+    font-size:clamp(1.5rem, 0.75rem + 3.75vw, 3rem);
+    text-align:center;
+  }
+
+  ul {
+    padding:0;
+    list-style-type:"";
+
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+    gap:1em;
+  }
+
+  li {
+    padding:2em;
+
+    display:flex;
+    flex-direction:column-reverse;
+    gap:.5em;
+    align-items:center;
+
+    background-color:#fff6;
+    border-radius:30%;
+    
+    @supports (corner-shape:squircle) {
+      border-radius:50%;
+      corner-shape:squircle;
+    }
+  }
+
+  h2 {
+    margin:0;
+    font-weight:400;
+  }
+
+  img {
+    width:90%;
+  }
+}

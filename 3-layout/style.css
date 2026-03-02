@@ -1,0 +1,91 @@
+/* VIEW TRANSITION STUFF */
+
+/* GEEF DE LI'S EEN VT-NAME */
+/* - daar kun je match-element voor gebruiken */
+/* - developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/view-transition-name */
+/* GEEF DE LI'S EEN VT-CLASS */
+/* - developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/view-transition-class */
+
+li {
+  view-transition-name: match-element;
+  view-transition-class: item;
+}
+
+/* BONUS */
+/* LAAT DE VT LANGER DUREN */
+/* - nodig ::view-transition-group met de vt-class */
+/* - ook leuk animation-timing-function met een open props ease-spring */
+/* - github.com/argyleink/open-props/blob/main/src/props.easing.css */
+
+::view-transition-group(.item) {
+  animation-duration: 1s;
+  animation-timing-function:linear(
+    0, 0.009, 0.037 1.7%, 0.153 3.6%, 0.776 10.3%, 1.001, 1.142 16%, 1.185,
+    1.209 19%, 1.215 19.9% 20.8%, 1.199, 1.165 25%, 1.056 30.3%, 1.008 33%, 0.973,
+    0.955 39.2%, 0.953 41.1%, 0.957 43.3%, 0.998 53.3%, 1.009 59.1% 63.7%,
+    0.998 78.9%, 1
+  );
+}
+
+
+/* BONUS */
+/* STIJL DE BUTTON ALS DE BUTTON DISABLED IS */
+button {
+  transition:.2s;
+}
+
+button:disabled {
+  rotate:x 89deg;
+  background: canvastext;
+}
+
+
+
+
+
+@layer basis {
+  body {
+    height:100dvh;
+    margin:0;
+
+    display:grid;
+    place-content:center;
+    place-items:center;
+    gap:1em;
+
+    font-family:saira, sans-serif;
+  }
+
+  ul {
+    margin:0;
+    padding:0;
+    list-style-type:"";
+
+    display:grid;
+    grid-template-columns:repeat(3, min(20vw, 10em));
+    gap:1em;
+  }
+
+  li {
+    aspect-ratio:1;
+
+    display:grid;
+    place-items:center;
+
+    background:fixed linear-gradient(135deg in hsl, lightyellow 25%, lightblue 75%) 50% / 100dvh 100vw;
+    border-radius:20%;
+
+    @supports (corner-shape:squircle) {
+      border-radius:50%;
+      corner-shape:squircle;
+    }
+
+    font-size:3em;
+  }
+
+
+  button {
+    font:inherit;
+    width:6em;
+  }
+}
