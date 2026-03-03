@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link id="style" rel="stylesheet" href="index.css">
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Overview</title>
 
-  <link rel="expect" blocking="render" href="#lijst">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="index.css">
+  <link rel="expect" href="#style" blocking="render" />
+  <link rel="expect" href="#phoenix" blocking="render" />
 </head>
 
 <body>
   <h1>Het is een sprookje</h1>
 
-  <ul id="lijst">
+  <ul>
     <li>
       <h2 style="--vt:title-wolf"><a href="wolf.html">wolf</a></h2>
       <img style="--vt:image-wolf" src="https://assets.codepen.io/274456/ft-icon-wolf.svg" alt="" />
@@ -99,7 +97,7 @@
       <img src="https://assets.codepen.io/274456/ft-icon-ball.svg" alt="" />
     </li>
     <li>
-      <h2>fenix</h2>
+      <h2 id="phoenix">fenix</h2>
       <img src="https://assets.codepen.io/274456/ft-icon-phoenix.svg" alt="" />
     </li>
   </ul>

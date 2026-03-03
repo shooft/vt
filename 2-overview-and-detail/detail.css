@@ -15,6 +15,7 @@
 }
 
 
+
 /* ALLEEN DE WOLF */
 
 /* h1 {
@@ -66,6 +67,16 @@ img {
 /* BASIS */
 
 @layer basis {
+  @font-face {
+		font-family: "saira-var";
+		src:url("../fonts/saira.ttf");
+	}
+
+  @font-face {
+		font-family: "fairytale";
+		src:url("../fonts/fairytale.ttf");
+	}
+
   * {
     box-sizing:border-box;
   }
@@ -82,13 +93,14 @@ img {
     place-items:center;
     gap:1em;
 
-    font-family: "Saira", sans-serif;
+    font-family: "saira-var", sans-serif;
   }
 
   h1 {
     margin:0;
-    font-family: "Mystery Quest", system-ui;
+    font-family: "fairytale", system-ui;
     font-size:clamp(2rem, 0.5rem + 7.5vw, 5rem);
+    font-weight:400;
     text-align:center;
   }
 

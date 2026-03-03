@@ -1,0 +1,12 @@
+body {
+  margin:0;
+  padding:1em;
+
+  background-color:#ccc;
+
+  font-family:saira, sans-serif;
+}
+
+h1, h2 {
+  margin:0;
+}

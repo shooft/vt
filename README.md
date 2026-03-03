@@ -1,2 +1,0 @@
-# vt
-view transitions challenge

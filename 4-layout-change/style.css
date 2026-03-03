@@ -44,6 +44,11 @@ button:disabled {
 
 
 @layer basis {
+  @font-face {
+		font-family: "saira-var";
+		src:url("../fonts/saira.ttf");
+	}
+
   body {
     height:100dvh;
     margin:0;
@@ -53,7 +58,7 @@ button:disabled {
     place-items:center;
     gap:1em;
 
-    font-family:saira, sans-serif;
+    font-family:saira-var, sans-serif;
   }
 
   ul {

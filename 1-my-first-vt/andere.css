@@ -1,4 +1,4 @@
-/* VIEW TRANSITION STUFF */
+/* VIEW TRANSITIONS AANZETTEN */
 
 @media (prefers-reduced-motion: no-preference) {
 	@view-transition {
@@ -8,11 +8,15 @@
 
 
 
+
+
 /* DURATION VOOR ROOT */
 
 ::view-transition-group(root){
 	animation-duration: 1.5s;
 }
+
+
 
 
 
@@ -30,6 +34,8 @@ h1 {
 
 /* WIPE IN / OUT VOOR ROOT */
 
+/* https://github.com/argyleink/open-props/blob/main/src/props.easing.css */
+
 @keyframes wipe-out {
 	to {
 		translate:-100%;
@@ -38,13 +44,13 @@ h1 {
 
 ::view-transition-old(root) {
 	animation-name: wipe-out;
-	animation-timing-function:linear(
+	/* animation-timing-function:linear(
     0, 0.004, 0.016 2.5%, 0.063, 0.141, 0.25 10.1%, 0.562, 1 20.2%, 0.783, 0.627,
     0.534 30.9%, 0.511, 0.503, 0.511, 0.534 38%, 0.627, 0.782, 1 48.7%, 0.892,
     0.815, 0.769 56.3%, 0.757, 0.753, 0.757, 0.769 61.3%, 0.815, 0.892, 1 68.8%,
     0.908 72.4%, 0.885, 0.878, 0.885, 0.908 79.4%, 1 83%, 0.954 85.5%, 0.943,
     0.939, 0.943, 0.954 90.5%, 1 93%, 0.977, 0.97, 0.977, 1
-  );
+  ); */
 }
 
 @keyframes wipe-in {
@@ -55,13 +61,13 @@ h1 {
 
 ::view-transition-new(root) {
 	animation-name: wipe-in;
-	animation-timing-function:linear(
+	/* animation-timing-function:linear(
     0, 0.004, 0.016 2.5%, 0.063, 0.141, 0.25 10.1%, 0.562, 1 20.2%, 0.783, 0.627,
     0.534 30.9%, 0.511, 0.503, 0.511, 0.534 38%, 0.627, 0.782, 1 48.7%, 0.892,
     0.815, 0.769 56.3%, 0.757, 0.753, 0.757, 0.769 61.3%, 0.815, 0.892, 1 68.8%,
     0.908 72.4%, 0.885, 0.878, 0.885, 0.908 79.4%, 1 83%, 0.954 85.5%, 0.943,
     0.939, 0.943, 0.954 90.5%, 1 93%, 0.977, 0.97, 0.977, 1
-  );
+  ); */
 }
 
 
@@ -80,6 +86,11 @@ h1 {
 
 
 @layer basis {
+	@font-face {
+		font-family: "saira-var";
+		src:url("../fonts/saira.ttf");
+	}
+	
 	body {
 		height:100dvh;
 		margin:0;
@@ -89,7 +100,7 @@ h1 {
 		
 		background-color:gold;
 
-		font-family: "Saira", sans-serif;
+		font-family: "saira-var", sans-serif;
 	}
 
 	h1 {
@@ -98,5 +109,6 @@ h1 {
 		bottom:1rem;
 		margin:0;
 		font-size:20vw;
+		pointer-events:none;
 	}
 }

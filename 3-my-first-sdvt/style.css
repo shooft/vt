@@ -1,0 +1,80 @@
+/* VIEW TRANSITION STUFF */
+
+/* cubic-bezier tool voor easing van Lea Verou */
+/* https://cubic-bezier.com/ */
+
+img {
+  view-transition-name:raket;
+}
+
+::view-transition-group(raket) {
+  animation-duration: 2s;
+  animation-timing-function:cubic-bezier(.7, -.1, .7, -.1);
+}
+
+
+
+
+/* DE RAKET */
+
+/* startpositie raket - onderaan */
+
+img {
+  position:fixed;
+  bottom:3em;
+  width:10em;
+}
+
+/* raket met de class go */
+/* eindpositie raket - bovenaan */
+
+img.go {
+  top:1.5em;
+  bottom:unset;
+  width:1em;
+}
+
+
+
+@layer basis {
+  @font-face {
+		font-family: "saira-var";
+		src:url("../fonts/saira.ttf");
+  }
+
+  body {
+    height:100dvh;
+    margin:0;
+
+    display:grid;
+    justify-items:center;
+
+    background-image:
+      radial-gradient(circle at 50% 2em, #0000, midnightblue 2.5em, black),
+      repeating-conic-gradient(at 50% 2em,blue,darkblue, blue 5%);
+
+    font-family:saira-var, sans-serif;
+  }
+
+  blackhole {
+    position:fixed;
+    top:1em;
+
+    width:2em;
+    aspect-ratio:1;
+
+    background-color:black;
+    border-radius:50%;
+  }
+
+  button {
+    position:fixed;
+    bottom:2em;
+
+    min-width:13em;
+    padding:.5em;
+
+    font:inherit;
+    font-variant-numeric: tabular-nums;
+  }
+}

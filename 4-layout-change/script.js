@@ -5,6 +5,9 @@ const button = document.querySelector("button")
 
 button.addEventListener("click", husselen)
 
+
+
+// regelt het husselen
 async function husselen() {
 
   // Check of VT's ondersteund worden
@@ -35,6 +38,8 @@ async function husselen() {
 }
 
 
+
+// husselt de items door elkaar
 function husselenMaar() {
   for(let i = 0; i < items.length; i++) {
     let nr =  Math.floor( Math.random() * items.length )
@@ -42,10 +47,16 @@ function husselenMaar() {
   }
 }
 
+
+
+// disable de button
 function disableButton() {
   button.disabled = true;
 }
 
+
+
+// enable de button
 function enableButton() {
   button.disabled = false;
 }

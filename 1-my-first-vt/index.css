@@ -8,11 +8,15 @@
 
 
 
+
+
 /* DURATION VOOR ROOT */
 
 ::view-transition-group(root){
 	animation-duration: 1.5s;
 }
+
+
 
 
 
@@ -29,6 +33,8 @@ h1 {
 
 
 /* WIPE IN / OUT VOOR ROOT */
+
+/* https://github.com/argyleink/open-props/blob/main/src/props.easing.css */
 
 @keyframes wipe-out {
 	to {
@@ -82,6 +88,12 @@ h1 {
 /* BASIS */
 
 @layer basis {
+
+	@font-face {
+		font-family: "saira-var";
+		src:url("../fonts/saira.ttf");
+	}
+
 	body {
 		height:100dvh;
 		margin:0;
@@ -91,7 +103,7 @@ h1 {
 		
 		background-color:hotpink;
 
-		font-family: "Saira", sans-serif;
+		font-family: "saira-var", sans-serif;
 	}
 
 	h1 {
@@ -100,5 +112,6 @@ h1 {
 		top:1rem;
 		margin:0;
 		font-size:20vw;
+		pointer-events:none;
 	}
 }

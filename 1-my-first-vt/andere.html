@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link id="style" rel="stylesheet" href="andere.css">
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>De andere pagina</title>
 
-  <link rel="expect" blocking="render" href="#link">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="andere.css">
+  <link rel="expect" href="#style" blocking="render" />
+  <link rel="expect" href="#title" blocking="render" />
 </head>
 
 <body>
-  <h1>howdy</h1>
-  <a id="link" href="index.html">de ene pagina</a>
+  <h1 id="title">howdy</h1>
+  <a href="index.html">de ene pagina</a>
 </body>
 </html>
